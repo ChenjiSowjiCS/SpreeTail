@@ -26,6 +26,7 @@ namespace SpreeTrail
                 }
 
                 MultiValueDictionaryHelper.CallOperation(operation, mvd);
+                Console.Write("\n");
 
             } while (true);
         }

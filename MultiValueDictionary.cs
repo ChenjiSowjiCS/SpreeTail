@@ -17,7 +17,7 @@ namespace SpreeTrail
                 list = dictionary[key];
                 if (list.Contains(val))
                 {
-                    throw new Exception("ERROR, value already exists\n");
+                    throw new Exception("ERROR, value already exists");
                 }
                 else
                 {
@@ -45,12 +45,12 @@ namespace SpreeTrail
                 }
                 else
                 {
-                    throw new Exception("ERROR, value does not exist\n");
+                    throw new Exception("ERROR, value does not exist");
                 }
             }
             else
             {
-                throw new Exception("ERROR, key does not exist\n");
+                throw new Exception("ERROR, key does not exist");
             }
         }
 
@@ -77,7 +77,7 @@ namespace SpreeTrail
             }
             else
             {
-                throw new Exception("ERROR, key Does not exist\n");
+                throw new Exception("ERROR, key Does not exist");
             }
         }
 
@@ -90,7 +90,7 @@ namespace SpreeTrail
             }
             else
             {
-                throw new Exception("ERROR, key does not exist\n");
+                throw new Exception("ERROR, key does not exist");
             }
         }
 

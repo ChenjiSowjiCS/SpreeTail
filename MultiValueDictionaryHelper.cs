@@ -19,7 +19,8 @@ namespace SpreeTrail
             Print("\tVALUEEXISTS\t- Returns if a value exists within a key \n\t\t\t  Usage: VALUEEXISTS {key} {value}\n");
             Print("\tALLMEMBERS\t- Returns all the values in the dictionary \n\t\t\t  Usage: ALLMEMBERS\n");
             Print("\tITEMS\t\t- Returns all keys and correponding values in the dictionary \n\t\t\t  Usage: ITEMS \n");
-            Print("\tEXIT\t\t-To exit out of the application \n\t\t\t Usage: EXIT \n");
+            Print("\tEXIT\t\t- To exit out of the application \n\t\t\t  Usage: EXIT \n");
+            Print("\tHELP\t\t- To show the command list \n\t\t\t  Usage: HELP\n");
         }
 
         public static void CallOperation(string operation, MultiValueDictionary<string, string> mvd)
@@ -46,23 +47,23 @@ namespace SpreeTrail
                 {
                     case "ADD":
                         mvd.Add(key, val);
-                        Print("Added\n");
+                        Print("Added");
                         break;
 
                     case "REMOVE":
                         mvd.Remove(key, val);
-                        Print("Removed\n");
+                        Print("Removed");
                         break;
 
                     case "VALUEEXISTS":
                         bool isValExist = mvd.CheckValueExists(key, val);
                         if (isValExist)
                         {
-                            Print("true\n");
+                            Print("true");
                         }
                         else
                         {
-                            Print("false\n");
+                            Print("false");
                         }
                         break;
 
@@ -71,7 +72,7 @@ namespace SpreeTrail
                         counter = 0;
                         if (members.Count == 0)
                         {
-                            Print("(empty set)\n");
+                            Print("(empty set)");
                         }
                         else
                         {
@@ -79,24 +80,23 @@ namespace SpreeTrail
                             {
                                 Print(++counter + ") " + s);
                             }
-                            Print("\n");
                         }
                         break;
 
                     case "REMOVEALL":
                         mvd.RemoveAll(key);
-                        Print("Removed\n");
+                        Print("Removed");
                         break;
 
                     case "KEYEXISTS":
                         bool isKeyExist = mvd.CheckKeyExists(key);
                         if (isKeyExist)
                         {
-                            Print("true\n");
+                            Print("true");
                         }
                         else
                         {
-                            Print("false\n");
+                            Print("false");
                         }
                         break;
 
@@ -105,7 +105,7 @@ namespace SpreeTrail
                         counter = 0;
                         if (keys.Count == 0)
                         {
-                            Print("(empty set)\n");
+                            Print("(empty set)");
                         }
                         else
                         {
@@ -113,13 +113,12 @@ namespace SpreeTrail
                             {
                                 Print(++counter + ") " + s);
                             }
-                            Print("\n");
                         }
                         break;
 
                     case "CLEAR":
                         mvd.Clear();
-                        Print("Cleared\n");
+                        Print("Cleared");
                         break;
 
                     case "ALLMEMBERS":
@@ -127,7 +126,7 @@ namespace SpreeTrail
                         counter = 0;
                         if (allMembers.Count == 0)
                         {
-                            Print("(empty set)\n");
+                            Print("(empty set)");
                         }
                         else
                         {
@@ -135,7 +134,6 @@ namespace SpreeTrail
                             {
                                 Print(++counter + ") " + s);
                             }
-                            Print("\n");
                         }
                         break;
 
@@ -144,7 +142,7 @@ namespace SpreeTrail
                         counter = 0;
                         if (items.Count == 0)
                         {
-                            Print("(empty set)\n");
+                            Print("(empty set)");
                         }
                         else
                         {
@@ -156,8 +154,13 @@ namespace SpreeTrail
                                     Print(++counter + ") " + kvp.Key + ": " + s);
                                 }
                             }
-                            Print("\n");
                         }
+                        break;
+
+                    case "HELP": ShowOperationList();
+                        break;
+
+                    default: Print("Invalid Input. Please refer to the command list above or type HELP");
                         break;
                 }
             }
