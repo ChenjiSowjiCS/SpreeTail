@@ -3,9 +3,17 @@ using System.Collections.Generic;
 
 namespace SpreeTrail
 {
+    /// <summary>
+    /// Helper class for MultiValueDictionary 
+    /// Contains all methods to facilitate multiple operations on MultiValueDictionary
+    /// </summary>
     public static class MultiValueDictionaryHelper
     {
         private static readonly char SEPARATOR = ' ';
+
+        /// <summary>
+        /// Displays list of operations to perform on MultiValueDictionary.
+        /// </summary>
         public static void ShowOperationList()
         {
             Print("Usage:  {Command}  [key]  [value]\n\n");
@@ -23,6 +31,9 @@ namespace SpreeTrail
             Print("\tHELP\t\t- To show the command list \n\t\t\t  Usage: HELP\n");
         }
 
+        /// <summary>
+        /// Calls the corresponding operation based on the input command. Formats/Acknowlegdes the output.
+        /// </summary>
         public static void CallOperation(string operation, MultiValueDictionary<string, string> mvd)
         {
             if (operation == null)
@@ -170,6 +181,9 @@ namespace SpreeTrail
             }
         }
 
+        /// <summary>
+        /// Prints the string onto the console screen.
+        /// </summary>
         public static void Print(string str)
         {
             Console.WriteLine(str);
